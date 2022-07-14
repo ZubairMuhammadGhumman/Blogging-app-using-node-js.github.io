@@ -1,0 +1,74 @@
+<!doctype html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
+
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <body>
+    
+        <header class="clearfix">
+            <%- include('./partials/header'); %>
+        </header>
+        
+        
+        <!-- Start Header Section -->
+        <div class="page-header">
+            <div class="overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Blogs</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Header Section -->
+        
+        
+        
+        
+        
+        <!-- Start Blog Page Section -->
+        <div class="container">
+            <div class="row">
+                
+                <!-- Start Blog Body Section -->
+                <%  Data.forEach(item =>{  %>
+                <div class="col-md-12 blog-body">
+                    
+                    <!-- Start Blog post -->
+                    <div class="blog-post">
+                        <div class="post-img">
+                            <a href="/detail-blog/<%= item._id %>"><img src="<%= item.url %>" alt="Blog image" height="300"></a>
+                        </div>
+                        <h1 class="post-title"><a href="/detail-blog/<%= item._id %>"><%= item.title %></a></h1>
+                        
+                        <ul class="post-meta">
+							<li><i class="fa fa-clock-o"></i><%= item.date %></li>
+						</ul>
+                        <p class="post-content"><a href="/detail-blog/<%= item._id %>"><%= item.detail %></a></p>
+
+                        <p class="post-content"><a href="/detail-blog/<%= item._id %>"><%= item.description.substring(0, 50); %>...</a></p>
+                        <!--<a href="#" class="btn btn-primary readmore">Read more...<i class="fa fa-angle-right"></i></a>-->
+                        <a class="btn btn-info" href="/detail-blog/<%= item._id %>" role="button">Show Detail</a>
+                        <a class="btn btn-warning" href="/edit/<%= item._id %>" role="button">Edit</a>
+                        <a class="btn btn-danger" href="/delete/<%= item._id %>" role="button">Delete</a>
+                    </div>
+                    
+                    <!-- End Blog Post -->
+                </div>
+                <!-- End Blog Body Section -->
+                <% }) %>
+            </div>
+        </div>
+        <!-- End Blog Page Section -->
+        
+        <footer>
+            <%- include('./partials/footer'); %>
+        </footer>
+    </body>
+</html>

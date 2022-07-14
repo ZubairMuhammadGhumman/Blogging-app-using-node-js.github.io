@@ -1,0 +1,56 @@
+<!doctype html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
+
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <body>
+
+        <header class="clearfix">
+            <%- include('./partials/header'); %>
+        </header>
+        
+        <div class="container contact-form" style="margin-top: 100px; margin-bottom: 97px">
+            <form method="post" action="/Create-Blog">
+                <h3 style="margin-bottom:5px ;">Blog Create</h3>
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Blog Title *" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="author" class="form-control" placeholder="Author *" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="detail" class="form-control" placeholder="Details *" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnContact" value="Publish Blog" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="description" class="form-control" placeholder="Blog Body *" style="width: 100%; height: 105px;" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="url" class="form-control" placeholder="Enter URL *" value="" required/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+</div>
+        
+        
+        
+        
+        <!--footer-->
+
+        <footer>
+            <%- include('./partials/footer'); %>
+        </footer>
+    
+    </body>
+</html>

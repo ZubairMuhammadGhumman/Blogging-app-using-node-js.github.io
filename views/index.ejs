@@ -1,0 +1,74 @@
+<!doctype html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
+
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <body>
+
+    <header class="clearfix">
+        <%- include('./partials/header'); %>
+    </header>
+
+   <!-- Start Header Section -->
+<div class="banner">
+    <div class="overlay">
+        <div class="container">
+            <div class="intro-text">
+                <h1>Welcome To The <span>Tech Lovers</span></h1>
+                <p>This Blog is all about Technology</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Header Section -->
+    
+    
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="int-text">
+            <h1>B<span>logs</span></h1>
+      
+        </div>
+    </div>
+<!--blog portion-->
+<!-- Blogs start-->
+   <div class="container">
+    <div class="row tm-row">
+        <%  Data.forEach(item =>{  %>
+        <article class="col-12 col-md-4 tm-post"">
+            <hr class="tm-hr-primary">
+            <img src="<%= item.url %>" alt="image" height="200">
+                <h2 class="tm-pt-30 tm-color-primary tm-post-title"><a href="./detail-blog/<%= item._id %>"><%= item.title %></a></h2>
+                 <h3 class="tm-pt-30 tm-color-primary tm-post-title"><a href="./detail-blog/<%= item._id %>"><%= item.author %></a></h3>
+
+                <p class="tm-pt-30">
+                 <a href="./detail-blog/<%= item._id %>"><%= item.detail %></a>
+                </p>
+
+                <div class="d-flex justify-content-between tm-pt-45">
+            
+                    <span class="tm-color-primary"><%= item.date %></span>             
+            </div>
+            <a class="btn btn-info" href="./detail-blog/<%= item._id %>" role="button">Show Detail</a>
+            <a class="btn btn-warning" href="./edit/<%= item._id %>" role="button">Edit</a>
+            <a class="btn btn-danger" href="./delete/<%= item._id %>" role="button">Delete</a>
+        </article>
+        <% }) %>
+    </div>  
+    </div>  
+<!-- Blogs ends-->
+   
+
+<!--footer-->
+
+        <footer>
+            <%- include('./partials/footer'); %>
+        </footer>
+    
+    </body>
+</html>
